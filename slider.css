@@ -1,0 +1,105 @@
+.imgSlider,.imgSlider2,.slider3 {
+    position: relative;
+    overflow: hidden;
+    width: 1000px;
+    height: 667px;
+
+}
+
+.imgSlider>img{
+    position: absolute;
+    top:0;
+    left:0; 
+}
+
+.imgSlider>img#img2{
+    left:1000px;
+}
+.imgSlider>img#img1.active{
+    left:-1000px;
+    transition: left 1.5s;
+}
+
+.imgSlider>img#img2.active{
+    left:0;
+    transition: left 1.5s;
+}
+/* slider2 */
+
+.imgSlider2>img{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.imgSlider2>img#sliderImg2{
+    display: none;
+}
+.imgSlider2>img#sliderImg2.active{
+    display: block;
+}
+
+
+
+.slideScreen:after{
+ content: '';
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 200%;
+ height: 100%;
+ background: rgb(94, 86, 86);
+ animation: a-ltr-after 2.6s cubic-bezier(.80,0,.10,0) forwards ;
+ transform: translateX(-101%);
+}
+
+
+
+@keyframes a-ltr-after{
+ 0% {transform: translateX(-100%)}
+
+ 50%{transform: translateX(50%)}
+ 100%{transform: translateX(-100%)}
+}
+
+/* slider3 */
+
+
+.slider3>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+#firstImg.active{
+    z-index: 99;
+}
+
+#part1{
+    clip-path: polygon(0 0, 25% 0, 25% 100%, 0% 100%);
+    top: -667px;
+    transition: 1s ease-in;
+}
+
+#part2{
+    clip-path: polygon(25% 0, 50% 0, 50% 100%, 25% 100%);
+    top: -667px;
+    transition: 1.2s ease-in;
+}
+
+#part3{
+    clip-path: polygon(50% 0, 75% 0, 75% 100%, 50% 100%);
+    top: -667px;
+    transition: 1.5s ease-in;
+}
+
+#part4{
+    clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%);
+    top: -667px;
+    transition: 1.7s ease-in;
+}
+
+#part1.active, #part2.active ,#part3.active, #part4.active{
+    top:0;
+}
+
